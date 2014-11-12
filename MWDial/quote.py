@@ -1,6 +1,5 @@
 import re
 
-
 class Quote:
 
     def __init__(self):
@@ -146,7 +145,7 @@ class Topic:
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        endtable()
+        Topic.endtable()
 
     def starttable(self, layout, header=None):
         if layout == "faction":
@@ -169,5 +168,6 @@ class Topic:
             return None
 
 
-def endtable():
-    print('|}\n')
+    @staticmethod
+    def endtable():
+        print('|}\n')
